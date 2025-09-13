@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Générateur de QR Code Adaptatif</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  
+</head>
+<body>
+  <button id="theme-toggle">🌙</button>
+
+  <div class="container">
+    <h1>QR Téléphone & USSD</h1>
+    <div class="options">
+      <label>
+        <input type="radio" name="type" value="phone" checked />
+        <span>Téléphone</span>
+      </label>
+      <label>
+        <input type="radio" name="type" value="ussd" />
+        <span>USSD</span>
+      </label>
+    </div>
+    <label for="dataInput">Entrez le numéro ou le code</label>
+    <input type="text" id="dataInput" placeholder="+33123456789 ou *123#"/>
+    <div class="error" id="errorMsg"></div>
+    <button id="generateBtn">Générer le QR Code</button>
+  </div>
+
+  <!-- Pop-up pour afficher le QR Code -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+      <div id="qrcode"></div>
+      <button id="downloadBtn">Télécharger</button>
+      <button id="closeBtn">Fermer</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  
+</body>
+</html>
